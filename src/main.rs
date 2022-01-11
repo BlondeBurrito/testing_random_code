@@ -22,9 +22,7 @@ fn main() {
 				.with_system(generate_ids),
 		)
 		// Scenario 2: uncomment below, comment the above system set, clicking the button stops logging
-		// .add_system_set(
-		// 	SystemSet::on_update(AppState::Go).with_system(generate_ids),
-		// )
+		// .add_system_set(SystemSet::on_update(AppState::Go).with_system(generate_ids))
 		.run();
 }
 
