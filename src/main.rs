@@ -40,10 +40,9 @@ impl Default for IDManager {
 }
 impl IDManager {
 	/// Creates a new unique ID
-	fn new(&mut self) -> usize {
+	fn new(&mut self) {
 		self.current_id = self.current_id.overflowing_add(1).0;
 		info!("Unique ID generated: {}", self.current_id);
-		self.current_id.to_owned()
 	}
 }
 /// Spawn the IDManager entity, UI camera and button entity
@@ -96,5 +95,5 @@ fn button_system(
 }
 /// Each time step create a new ID, the impl prints it out
 fn generate_ids(mut query: Query<&mut IDManager>) {
-	let _ = query.single_mut().new();
+	query.single_mut().new();
 }
