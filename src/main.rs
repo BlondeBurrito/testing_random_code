@@ -4,7 +4,7 @@ use bevy::prelude::*;
 const TIME_STEP: f64 = 1.0;
 
 #[derive(Clone, Eq, PartialEq, Debug, Hash)]
-pub enum AppState {
+enum AppState {
 	Go,
 	Stop,
 }
